@@ -85,6 +85,6 @@ java -cp "target/subiQueTeLlevo-1.0-SNAPSHOT.jar;target/test-classes;%USERPROFIL
 - Offer database or external service persistence beyond XML/binary.
 
 ## Authors
-- Iván Ahumada
-- Gian Franco Magliotti
-- Gianfranco San Pedro
+- Ahumada, Iván 
+- Magliotti, Gian Franco 
+- San Pedro, Gianfranco

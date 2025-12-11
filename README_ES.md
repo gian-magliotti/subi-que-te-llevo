@@ -85,6 +85,6 @@ java -cp "target/subiQueTeLlevo-1.0-SNAPSHOT.jar;target/test-classes;%USERPROFIL
 - Ofrecer persistencia en base de datos o servicio externo además de XML/binario.
 
 ## Autores
-- Iván Ahumada
-- Gian Franco Magliotti
-- Gianfranco San Pedro
+- Ahumada, Iván 
+- Magliotti, Gian Franco 
+- San Pedro, Gianfranco 
