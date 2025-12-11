@@ -3,12 +3,18 @@
 Academic Java ride-hailing simulator with Swing UI, design patterns, concurrency, and persistence applied across the travel lifecycle.
 
 ## Academic Context
-- Final Project (part two) for “Programación III” at the School of Engineering (UNMDP), delivered on 2024-06-09.
+- Final Project (part two) for "Programación III" at the School of Engineering (UNMDP), delivered on 2024-06-09.
 - Goal: extend the first delivery by adding threads, synchronization, MVC, and serialization.
 
 ## System Overview
 - Models a taxi/remise company managing clients, drivers, and vehicles, resolving ride requests with resource assignment and pricing.
 - Provides a multi-threaded simulation (clients, drivers, system) and views that show live trip/resource state.
+
+## What the application does
+- Simulates a full ride-hailing operation: register clients, onboard drivers and vehicles to build the fleet.
+- Clients sign in via the Swing app, request trips by zone, distance, pet/luggage needs, and passengers; the system validates each request and assigns the best vehicle based on model rules.
+- Orders and driver threads run in parallel: each driver picks up, charges, and finishes trips while the views show live assignments and statuses.
+- The simulation keeps history of trips, drivers, and vehicles for follow-up and reporting within the academic scenario.
 
 ## Key Features
 - CRUD, listings, and reports for users, drivers, and vehicles (`sistema/AdmSubSistema`).

@@ -10,6 +10,12 @@ Simulador académico de un servicio de remises en Java, con interfaz Swing y én
 - Modela una empresa de remises que administra clientes, choferes y vehículos, resolviendo pedidos de viaje con asignación de recursos y cálculo de costos.
 - Incluye simulación multi-hilo (clientes, choferes, sistema) y vistas que reflejan el estado de viajes y recursos en tiempo real.
 
+## Qué hace la aplicación
+- Simula el funcionamiento integral de una empresa de remises: registra clientes, choferes y vehículos para armar la flota.
+- Los clientes inician sesión en la app Swing, solicitan viajes indicando zona, distancia, mascota/equipaje y cantidad de pasajeros; el sistema valida la solicitud y asigna el vehículo más adecuado según las reglas del modelo.
+- Los pedidos y los hilos de chofer corren en paralelo: cada chofer toma, cobra y finaliza viajes mientras las vistas muestran en vivo las asignaciones y estados.
+- La simulación mantiene histórico de viajes, choferes y vehículos para seguimiento y reportes internos dentro del escenario académico.
+
 ## Funcionalidades Principales
 - Altas, listados y reportes de usuarios, choferes y vehículos (`sistema/AdmSubSistema`).
 - Validación de pedidos, creación de viajes, asignación de vehículo/chofer, calificación y cálculo de costos con extras (`sistema/ViajesSubSistema`).
