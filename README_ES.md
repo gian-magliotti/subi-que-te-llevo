@@ -1,5 +1,7 @@
 # Subí Que Te Llevo
 
+Versión en inglés: [README.md](README.md)
+
 Simulador académico de un servicio de remises en Java, con interfaz Swing y énfasis en patrones de diseño, concurrencia y persistencia a lo largo del ciclo de viaje.
 
 ## Contexto Académico

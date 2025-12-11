@@ -1,5 +1,7 @@
 # Subí Que Te Llevo
 
+Spanish version: [README_ES.md](README_ES.md)
+
 Academic Java ride-hailing simulator with Swing UI, design patterns, concurrency, and persistence applied across the travel lifecycle.
 
 ## Academic Context
