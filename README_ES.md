@@ -4,11 +4,9 @@ Versión en inglés: [README.md](README.md)
 
 Simulador académico de un servicio de remises en Java, con interfaz Swing y énfasis en patrones de diseño, concurrencia y persistencia a lo largo del ciclo de viaje.
 
-## Contexto Académico
+## Contexto académico y descripción general
 - Trabajo Práctico Final (segunda parte) de Programación III, Facultad de Ingeniería (UNMDP), presentado el 09/06/2024.
 - Objetivo: extender la primera entrega incorporando hilos, sincronización, MVC y serialización.
-
-## Descripción General
 - Modela una empresa de remises que administra clientes, choferes y vehículos, resolviendo pedidos de viaje con asignación de recursos y cálculo de costos.
 - Incluye simulación multi-hilo (clientes, choferes, sistema) y vistas que reflejan el estado de viajes y recursos en tiempo real.
 
@@ -45,6 +43,58 @@ Simulador académico de un servicio de remises en Java, con interfaz Swing y én
 - JDK 8+ y Maven 3.x.
 - Git (opcional) para clonar.
 - Entorno gráfico para mostrar ventanas Swing.
+
+## Etapas de desarrollo del proyecto (Parte 1 y Parte 2)
+
+Este documento describe cómo se construyó “Subí que te llevo” en dos etapas (dos repositorios) y cómo se organizaron las responsabilidades para completar el sistema de punta a punta. Cada etapa se enfocó en componentes distintos y, en conjunto, muestran el alcance completo del trabajo realizado.
+
+## 1) Estructura / Etapas del proyecto (2 repos)
+- **Parte 1:** https://github.com/i-ahumada/subi-que-te-llevo  
+  Base del dominio: choferes, vehículos, viajes, empresa y excepciones. Primeras pruebas y documentación Javadoc.
+- **Parte 2:** https://github.com/gian-magliotti/subi-que-te-llevo  
+  Evolución: interfaz Swing completa, simulación concurrente, capa de persistencia con DTO y serialización BIN/XML, más documentación y entregables.
+
+## 2) Participación durante el desarrollo
+
+### Gian (alias `sttormzyy` en Parte 2)
+- **Rol general:** Construyó el núcleo funcional y la interfaz/simulación que hacen usable el producto.
+- **Aportes clave Parte 1:**  
+  - Creó el modelo de viajes, vehículos y choferes (factories, decorators, zonas, pedidos).  
+  - Completó la lógica de empresa y subsistemas con validaciones y flujos de negocio.  
+  - Primeras pruebas de flujo para verificar operaciones principales.
+- **Aportes clave Parte 2:**  
+  - Implementó la UI Swing end-to-end (login, registro, panel de cliente, ventanas de simulación).  
+  - Armó la simulación concurrente (hilos de choferes/clientes, recurso compartido, observadores).  
+  - Integró controladores con la lógica previa y ajustó vistas/estilos para la entrega final.
+- **Impacto global:** Aseguró que el dominio inicial cobre vida en una aplicación completa y navegable, conectando UI, simulación y lógica de negocio.
+
+### Gianfranco
+- **Rol general:** Lideró la capa de datos y la solidez del dominio: subsistemas, clonación profunda, persistencia/DTO y documentación.
+- **Aportes clave Parte 1:**  
+  - Estructuró y afinó los subsistemas (AdmSubSistema, Empresa, ViajesSubSistema) para que el modelo fuera consistente y extensible.  
+  - Añadió clonación y correcciones de negocio en choferes/usuarios para evitar referencias compartidas.  
+  - Generó Javadoc y documentación base, clarificando contratos y pre/postcondiciones.
+- **Aportes clave Parte 2:**  
+  - Diseñó la capa de persistencia con patrón DTO y serialización BIN/XML (IPPersistencia, DTO de choferes/vehículos/usuarios/sistema).  
+  - Implementó utilidades de conversión y pruebas de lectura/escritura, habilitando guardar/cargar estado sin romper el dominio.  
+  - Extendió la clonación profunda y corrigió cálculos clave (ej. sueldos de choferes) para asegurar consistencia.  
+  - Elaboró README/README_ES y Javadoc completo, dejando el proyecto documentado para uso y mantenimiento.
+- **Impacto global:** Hizo posible que la app sea persistible y confiable: los datos se clonan bien, se serializan en BIN/XML y las reglas de negocio (sueldos, relaciones) se mantienen coherentes. La documentación resultante facilita adopción y soporte.
+
+### i-ahumada
+- **Rol general:** Aportó flujos de viaje y contratos de métodos, y ayudó a integrar persistencia y ramas grandes.
+- **Aportes clave Parte 1:**  
+  - Implementó solicitudes/inicio/pago de viaje sobre Empresa y Viaje, sumando validaciones.  
+  - Añadió pre/postcondiciones y asserts en choferes y subsistemas para reforzar reglas.  
+  - Contribuyó a la documentación Javadoc de módulos principales.
+- **Aportes clave Parte 2:**  
+  - Apoyó la capa de persistencia con renombrado/orden de DTO y utilidades de fecha/tiempo.  
+  - Ajustó clonación y sincronización en simulación, y realizó merges para alinear UI, concurrencia y persistencia.  
+  - Incorporó material de entrega (informes/presentaciones).
+- **Impacto global:** Fortaleció los flujos de negocio y la claridad contractual, y colaboró en que las piezas de datos y simulación quedaran alineadas al cierre.
+
+## 3) Integración de las dos etapas (Parte 1 + Parte 2)
+Ambos repos son complementarios: Parte 1 construye el dominio (viajes, vehículos, choferes, empresa, reglas) y Parte 2 lo lleva a producción con UI, simulación y persistencia. Evaluar el aporte total requiere ver los dos: Gianfranco trabajó más en bases y datos (Parte 1 y persistencia en Parte 2), Gian expandió hacia UI/simulación, e i-ahumada ayudó a cerrar flujos y merges. Juntos, cubren extremo a extremo: modelo sólido, datos persistibles y experiencia de usuario funcional.
 
 ## Instalación y Configuración
 ```bash

@@ -4,11 +4,9 @@ Spanish version: [README_ES.md](README_ES.md)
 
 Academic Java ride-hailing simulator with Swing UI, design patterns, concurrency, and persistence applied across the travel lifecycle.
 
-## Academic Context
+## Academic context and system overview
 - Final Project (part two) for "Programación III" at the School of Engineering (UNMDP), delivered on 2024-06-09.
 - Goal: extend the first delivery by adding threads, synchronization, MVC, and serialization.
-
-## System Overview
 - Models a taxi/remise company managing clients, drivers, and vehicles, resolving ride requests with resource assignment and pricing.
 - Provides a multi-threaded simulation (clients, drivers, system) and views that show live trip/resource state.
 
@@ -45,6 +43,58 @@ Academic Java ride-hailing simulator with Swing UI, design patterns, concurrency
 - JDK 8+ and Maven 3.x.
 - Git (optional) to clone.
 - Graphical environment to display Swing windows.
+
+## Project development stages (Part 1 and Part 2)
+
+This document describes how "Subí que te llevo" was built in two stages (two repositories) and how responsibilities were organized to complete the end-to-end system. Each stage focused on different components and, together, they show the full scope of the work delivered.
+
+## 1) Structure / Project stages (2 repos)
+- **Part 1:** https://github.com/i-ahumada/subi-que-te-llevo  
+  Domain foundation: drivers, vehicles, rides, company, and exceptions. Early tests and Javadoc documentation.
+- **Part 2:** https://github.com/gian-magliotti/subi-que-te-llevo  
+  Evolution: full Swing interface, concurrent simulation, persistence layer with DTO and BIN/XML serialization, more documentation and deliverables.
+
+## 2) Participation during development
+
+### Gian (aka `sttormzyy` in Part 2)
+- **General role:** Built the functional core and the UI/simulation that make the product usable.
+- **Key contributions Part 1:**  
+  - Built the ride, vehicle, and driver model (factories, decorators, zones, requests).  
+  - Completed company and subsystem logic with validations and business flows.  
+  - Initial flow tests to verify main operations.
+- **Key contributions Part 2:**  
+  - Implemented the Swing UI end-to-end (login, signup, client panel, simulation windows).  
+  - Built the concurrent simulation (driver/client threads, shared resource, observers).  
+  - Integrated controllers with the existing logic and fine-tuned views/styles for the final delivery.
+- **Overall impact:** Ensured the initial domain comes to life in a complete, navigable app, connecting UI, simulation, and business logic.
+
+### Gianfranco
+- **General role:** Led the data layer and domain robustness: subsystems, deep cloning, persistence/DTO, and documentation.
+- **Key contributions Part 1:**  
+  - Structured and refined the subsystems (AdmSubSistema, Empresa, ViajesSubSistema) so the model is consistent and extensible.  
+  - Added cloning and business fixes in drivers/users to avoid shared references.  
+  - Produced Javadoc and base documentation, clarifying contracts and pre/postconditions.
+- **Key contributions Part 2:**  
+  - Designed the persistence layer with the DTO pattern and BIN/XML serialization (IPPersistencia, DTOs for drivers/vehicles/users/system).  
+  - Implemented conversion utilities and read/write tests, enabling save/load without breaking the domain.  
+  - Extended deep cloning and corrected key calculations (e.g., driver salaries) to ensure consistency.  
+  - Prepared README/README_ES and full Javadoc, leaving the project documented for use and maintenance.
+- **Overall impact:** Made the app persistable and reliable: data clones correctly, serializes to BIN/XML, and business rules (salaries, relationships) stay coherent. The resulting documentation eases adoption and support.
+
+### i-ahumada
+- **General role:** Contributed ride flows and method contracts, and helped integrate persistence and large branches.
+- **Key contributions Part 1:**  
+  - Implemented ride request/start/payment on Empresa and Viaje, adding validations.  
+  - Added pre/postconditions and asserts in drivers and subsystems to reinforce rules.  
+  - Contributed to Javadoc documentation for the main modules.
+- **Key contributions Part 2:**  
+  - Supported the persistence layer with DTO renaming/ordering and date/time utilities.  
+  - Adjusted cloning and synchronization in the simulation, and performed merges to align UI, concurrency, and persistence.  
+  - Added delivery materials (reports/presentations).
+- **Overall impact:** Strengthened business flows and contractual clarity, and helped keep the data and simulation pieces aligned at closure.
+
+## 3) Integration of the two stages (Part 1 + Part 2)
+Both repos are complementary: Part 1 builds the domain (rides, vehicles, drivers, company, rules) and Part 2 takes it to production with UI, simulation, and persistence. Assessing the total contribution requires looking at both: Gianfranco worked more on foundations and data (Part 1 and persistence in Part 2), Gian expanded into UI/simulation, and i-ahumada helped close flows and merges. Together, they cover end-to-end: solid model, persistable data, and a functional user experience.
 
 ## Installation and Setup
 ```bash
