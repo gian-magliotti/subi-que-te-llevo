@@ -39,6 +39,7 @@ Simulador académico de un servicio de remises en Java, con interfaz Swing y én
 - UI Swing; `com.toedter:jcalendar` 1.4 para selección de fechas.
 - Serialización XML/binaria con DTOs.
 - Javadoc generado en `doc/`; diagrama de clases adicional en `Java Class Diagram.rar`.
+- Informe completo: [Informe Subi que te llevo - Parte 2 .pdf](Informe%20Subi%20que%20te%20llevo%20-%20Parte%202%20.pdf).
 
 ## Requisitos Previos
 - JDK 8+ y Maven 3.x.
@@ -76,6 +77,7 @@ java -cp "target/subiQueTeLlevo-1.0-SNAPSHOT.jar;target/test-classes;%USERPROFIL
 - `src/test/java/prueba/Prueba.java`: punto de entrada para lanzar la simulación.
 - `doc/`: Javadoc generado; `Empresa.xml` y `Parametros.xml`: datos de ejemplo persistidos.
 - `target/`: artefactos de build; `MavenApp/`: metadatos de IDE.
+- PDFs en la raíz: informe detallado ([Informe Subi que te llevo - Parte 2 .pdf](Informe%20Subi%20que%20te%20llevo%20-%20Parte%202%20.pdf)) y presentación ([Presentacion Subi que te llevo - Parte 2.pdf](Presentacion%20Subi%20que%20te%20llevo%20-%20Parte%202.pdf)).
 
 ## Trabajo Futuro
 - Mover el lanzador (`Prueba`) a `src/main` y declarar `Main-Class` en el `jar` para simplificar la ejecución.

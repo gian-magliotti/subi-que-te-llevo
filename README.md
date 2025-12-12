@@ -39,6 +39,7 @@ Academic Java ride-hailing simulator with Swing UI, design patterns, concurrency
 - Swing UI; `com.toedter:jcalendar` 1.4 for date picking.
 - XML/binary serialization with DTOs.
 - Generated Javadoc in `doc/`; extra class diagram in `Java Class Diagram.rar`.
+- Full project report: [Informe Subi que te llevo - Parte 2 .pdf](Informe%20Subi%20que%20te%20llevo%20-%20Parte%202%20.pdf).
 
 ## Prerequisites
 - JDK 8+ and Maven 3.x.
@@ -76,6 +77,7 @@ java -cp "target/subiQueTeLlevo-1.0-SNAPSHOT.jar;target/test-classes;%USERPROFIL
 - `src/test/java/prueba/Prueba.java`: entry point to launch the simulation.
 - `doc/`: generated Javadoc; `Empresa.xml` and `Parametros.xml`: sample persisted data.
 - `target/`: build artifacts; `MavenApp/`: IDE metadata.
+- Root PDFs: detailed report ([Informe Subi que te llevo - Parte 2 .pdf](Informe%20Subi%20que%20te%20llevo%20-%20Parte%202%20.pdf)) and slide deck ([Presentacion Subi que te llevo - Parte 2.pdf](Presentacion%20Subi%20que%20te%20llevo%20-%20Parte%202.pdf)).
 
 ## Future Work
 - Move the launcher (`Prueba`) into `src/main` and declare `Main-Class` in the `jar` for smoother runs.

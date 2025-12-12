@@ -61,8 +61,8 @@ public class ControladorCliente implements ActionListener {
                 break;
 
             case "PEDIR VIAJE":
-                pedirViaje();
                 vista.disablePedirViaje();
+                pedirViaje();
                 break;
 
             case "PAGAR VIAJE":
@@ -140,6 +140,7 @@ public class ControladorCliente implements ActionListener {
         try {
             recursoCompartido.pedirViaje(cliente, zona, mascota, "transporte", equipaje, cantPax, distancia, fecha);
         } catch (ExceptionPedido ex) {
+            vista.enablePedirViaje();
             vista.setDialog(ex.getMessage(),"Error");
 
         }
